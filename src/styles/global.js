@@ -27,8 +27,11 @@ export default createGlobalStyle`
   }
 
   body, input, button, h1, h2, h3, h4, h5, h6, p, span {
-    background: var(--grey-4);
     font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background: var(--grey-4);
   }
 
 `;
