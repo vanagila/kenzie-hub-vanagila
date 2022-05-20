@@ -1,6 +1,6 @@
 import { Container } from "./styles";
-import { Input } from "../../components/Input";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { Input } from "../../components/Input";
+import { useHistory } from "react-router-dom";
 
 export const Login = ({ logo }) => {
   const history = useHistory();
@@ -16,8 +16,8 @@ export const Login = ({ logo }) => {
       <Container>
         <form>
           <h4>Login</h4>
-          <Input label="Email" placeholder="Seu email" type="email" />
-          <Input label="Senha" placeholder="Sua senha" type="password" />
+          <input label="Email" placeholder="Seu email" type="email" />
+          <input label="Senha" placeholder="Sua senha" type="password" />
           <button>Entrar</button>
         </form>
         <p>Ainda não possui uma conta?</p>

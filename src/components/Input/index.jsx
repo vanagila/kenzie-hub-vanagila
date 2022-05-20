@@ -1,6 +1,6 @@
 import { Container, LabelContainer, InputContainer } from "./styles";
 
-export const Input = ({ label, icon, register, name, error, ...rest }) => {
+export const Input = ({ label, register, name, error, ...rest }) => {
   return (
     <Container>
       <LabelContainer>

@@ -1,10 +1,9 @@
-import { Container, ReturnLogin, Header } from "./styles";
+import { Container, Header } from "./styles";
 import { Input } from "../../components/Input";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { toast } from "react-toastify";
 
 export const Signup = ({ logo }) => {
   const formSchema = yup.object().shape({
@@ -13,7 +12,7 @@ export const Signup = ({ logo }) => {
     password: yup
       .string()
       .required("Campo obrigatório")
-      .matches("Senha de no mínimo 6 caracteres"),
+      .min(6, "Senha de no mínimo 6 caracteres"),
     confirmPassword: yup
       .string()
       .required("Campo obrigatório")
