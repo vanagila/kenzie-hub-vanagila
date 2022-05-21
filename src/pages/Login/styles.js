@@ -10,19 +10,6 @@ export const Container = styled.div`
   margin: auto;
   margin-top: 114px;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h4 {
-    color: #f8f9fa;
-    font-weight: 700;
-    padding-top: 36px;
-    padding-bottom: 22px;
-  }
-
   button {
     background: var(--primary);
     width: 100%;
@@ -31,6 +18,23 @@ export const Container = styled.div`
     border-radius: 4px;
     color: var(--grey-0);
     font-size: 13px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      background: var(--negative);
+    }
+  }
+
+  h4 {
+    color: #f8f9fa;
+    font-weight: 700;
+    padding-top: 36px;
+    padding-bottom: 22px;
   }
 
   p {

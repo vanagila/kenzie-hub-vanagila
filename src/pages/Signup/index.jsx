@@ -19,7 +19,7 @@ export const Signup = ({ logo }) => {
       .oneOf([yup.ref("password")], "Senhas não conferem"),
     bio: yup.string().required("Campo obrigatório"),
     contact: yup.string().required("Campo obrigatório"),
-    module: yup.string().required("Campo obrigatório"),
+    course_module: yup.string().required("Campo obrigatório"),
   });
 
   const {
@@ -33,6 +33,7 @@ export const Signup = ({ logo }) => {
   const history = useHistory();
 
   const sendData = (data) => {
+    delete data.confirmPassword;
     console.log(data);
   };
 
@@ -97,7 +98,7 @@ export const Signup = ({ logo }) => {
             register={register}
             label="Selecionar módulo"
             placeholder="Primeiro Módulo"
-            name="module"
+            name="course_module"
             error={errors.module?.message}
           />
           <button type="submit">Cadastrar</button>
