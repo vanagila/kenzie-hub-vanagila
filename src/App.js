@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
   return (
     <div className="App">
       <ToastContainer
@@ -20,7 +22,14 @@ function App() {
         pauseOnHover
       />
       <GlobalStyle />
-      <Routes user={user} setUser={setUser} />
+      <Routes
+        user={user}
+        setUser={setUser}
+        token={token}
+        setToken={setToken}
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
     </div>
   );
 }

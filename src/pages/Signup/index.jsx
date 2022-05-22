@@ -1,4 +1,4 @@
-import { Container, Header } from "./styles";
+import { Container, Header, ReturnLogin } from "./styles";
 import { Input } from "../../components/Input";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -6,8 +6,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
 
-export const Signup = ({ logo, setUser }) => {
+export const Signup = ({ logo, setUser, authenticated }) => {
   const formSchema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
@@ -42,16 +43,21 @@ export const Signup = ({ logo, setUser }) => {
       .then((response) => {
         toast.success("Usuário cadastrado com sucesso!");
         setUser(response.data);
+        history.push("/");
       })
       .catch((err) => toast.error("Algo deu errado, tente novamente"));
   };
+
+  if (authenticated) {
+    <Redirect to="/dashboard" />;
+  }
 
   return (
     <>
       <Header>
         <img src={logo} alt={"kenziehub"} />
       </Header>
-      {/* <ReturnLogin onClick={() => handleSignup("/")}>Voltar</ReturnLogin> */}
+      <ReturnLogin onClick={() => history.push("/")}>Voltar</ReturnLogin>
       <Container>
         <form onSubmit={handleSubmit(sendData)}>
           <h4>Crie sua conta</h4>
