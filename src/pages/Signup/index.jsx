@@ -4,8 +4,10 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { api } from "../../services/api";
+import { toast } from "react-toastify";
 
-export const Signup = ({ logo }) => {
+export const Signup = ({ logo, setUser }) => {
   const formSchema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
@@ -34,7 +36,14 @@ export const Signup = ({ logo }) => {
 
   const sendData = (data) => {
     delete data.confirmPassword;
-    console.log(data);
+
+    api
+      .post("/users", data)
+      .then((response) => {
+        toast.success("Usuário cadastrado com sucesso!");
+        setUser(response.data);
+      })
+      .catch((err) => toast.error("Algo deu errado, tente novamente"));
   };
 
   return (
@@ -99,7 +108,7 @@ export const Signup = ({ logo }) => {
             label="Selecionar módulo"
             placeholder="Primeiro Módulo"
             name="course_module"
-            error={errors.module?.message}
+            error={errors.course_module?.message}
           />
           <button type="submit">Cadastrar</button>
         </form>
