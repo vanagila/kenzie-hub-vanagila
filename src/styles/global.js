@@ -34,4 +34,8 @@ export default createGlobalStyle`
     background: var(--grey-4);
   }
 
+  button {
+    cursor: pointer;
+  }
+
 `;

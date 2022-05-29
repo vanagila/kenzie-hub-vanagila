@@ -3,24 +3,14 @@ import { Login } from "../pages/Login";
 import logo from "../img/Logo.png";
 import { Signup } from "../pages/Signup";
 import { Dashboard } from "../pages/Dashboard";
-import { useEffect } from "react";
 
 export const Routes = ({
   user,
   setUser,
-  token,
   setToken,
   authenticated,
   setAuthenticated,
 }) => {
-  useEffect(() => {
-    token = "@KenzieHub:Token";
-
-    if (token) {
-      return setAuthenticated(true);
-    }
-  }, [authenticated]);
-
   return (
     <Switch>
       <Route exact path="/">
@@ -36,7 +26,14 @@ export const Routes = ({
         <Signup logo={logo} setUser={setUser} authenticated={authenticated} />
       </Route>
       <Route exact path="/dashboard">
-        <Dashboard authenticated={authenticated} />
+        <Dashboard
+          authenticated={authenticated}
+          logo={logo}
+          user={user}
+          setToken={setToken}
+          setUser={setUser}
+          setAuthenticated={setAuthenticated}
+        />
       </Route>
     </Switch>
   );
