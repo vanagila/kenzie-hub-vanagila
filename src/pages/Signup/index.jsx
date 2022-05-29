@@ -1,5 +1,6 @@
 import { Container, Header, ReturnLogin } from "./styles";
 import { Input } from "../../components/Input";
+import { SelectSignUp } from "../../components/SelectSignUp";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -49,15 +50,15 @@ export const Signup = ({ logo, setUser, authenticated }) => {
   };
 
   if (authenticated) {
-    <Redirect to="/dashboard" />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
     <>
       <Header>
         <img src={logo} alt={"kenziehub"} />
+        <ReturnLogin onClick={() => history.push("/")}>Voltar</ReturnLogin>
       </Header>
-      <ReturnLogin onClick={() => history.push("/")}>Voltar</ReturnLogin>
       <Container>
         <form onSubmit={handleSubmit(sendData)}>
           <h4>Crie sua conta</h4>
@@ -109,7 +110,7 @@ export const Signup = ({ logo, setUser, authenticated }) => {
             name="contact"
             error={errors.contact?.message}
           />
-          <Input
+          <SelectSignUp
             register={register}
             label="Selecionar módulo"
             placeholder="Primeiro Módulo"

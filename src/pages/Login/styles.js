@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Header = styled.header`
+  width: 101px;
+  height: 14px;
+  margin: auto;
+  margin-top: 114px;
+  margin-bottom: 19px;
+`;
+
 export const Container = styled.div`
   width: 296px;
   height: 402px;
@@ -8,17 +16,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: auto;
-  margin-top: 114px;
-
-  button {
-    background: var(--primary);
-    width: 100%;
-    height: 38px;
-    border: 1px solid var(--primary);
-    border-radius: 4px;
-    color: var(--grey-0);
-    font-size: 13px;
-  }
 
   form {
     display: flex;
@@ -26,7 +23,17 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      background: var(--negative);
+      background: var(--primary);
+      width: 100%;
+      height: 38px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      color: var(--grey-0);
+      font-size: 13px;
+      &:hover {
+        background: var(--primary-focus);
+        border: 1px solid var(--primary-focus);
+      }
     }
   }
 
@@ -43,5 +50,19 @@ export const Container = styled.div`
     font-weight: 600;
     padding-top: 27px;
     padding-bottom: 17px;
+  }
+
+  button {
+    background: var(--primary);
+    width: 264px;
+    height: 38px;
+    font-size: 13px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    color: var(--grey-0);
+    &:hover {
+      background: var(--primary-focus);
+      border: 1px solid var(--primary-focus);
+    }
   }
 `;

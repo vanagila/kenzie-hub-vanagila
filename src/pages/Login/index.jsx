@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Header } from "./styles";
 import { Input } from "../../components/Input";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -24,6 +24,7 @@ export const Login = ({
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(formSchema),
@@ -33,8 +34,8 @@ export const Login = ({
     history.push("/signup");
   };
 
-  const handleLogin = (data) => {
-    api.post("/sessions", data).then((response) => {
+  const handleLogin = async (data) => {
+    await api.post("/sessions", data).then((response) => {
       localStorage.setItem("@KenzieHub:Token", response.data.token);
       localStorage.setItem(
         "@KenzieHub:User",
@@ -44,18 +45,22 @@ export const Login = ({
       setAuthenticated(true);
 
       setToken(response.data.token);
-      setUser(response.data);
+      setUser(response.data.user);
       history.push("/dashboard");
     });
+
+    reset();
   };
 
   if (authenticated) {
-    <Redirect to="/dashboard" />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
     <>
-      <img src={logo} alt={"kenziehub"} />
+      <Header>
+        <img src={logo} alt={"kenziehub"} />
+      </Header>
 
       <Container>
         <form onSubmit={handleSubmit(handleLogin)}>
