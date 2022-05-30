@@ -13,6 +13,10 @@ export const ModalHeader = styled.header`
     font-size: 11px;
     font-weight: 700;
     color: var(--grey-0);
+
+    @media screen and (min-device-width: 769px) {
+      font-size: 14px;
+    }
   }
 
   button {
@@ -21,6 +25,10 @@ export const ModalHeader = styled.header`
     border: none;
     color: var(--grey-0);
     cursor: pointer;
+
+    @media screen and (min-device-width: 769px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -29,13 +37,29 @@ export const EditTechModal = styled.div`
   width: 296px;
   background: var(--grey-3);
   position: absolute;
+  transition: ease all 0.5s;
   top: 20%;
   left: 4%;
   box-shadow: -5px 3px 4px 1px rgba(0, 0, 0, 0.36);
   -webkit-box-shadow: -5px 3px 4px 1px rgba(0, 0, 0, 0.36);
   -moz-box-shadow: -5px 3px 4px 1px rgba(0, 0, 0, 0.36);
 
-  /* left: 40.8%; */
+  @media screen and (min-device-width: 480px) {
+    width: 345px;
+    left: 10%;
+    transition: ease all 0.5s;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 325px;
+    left: 29%;
+  }
+
+  @media screen and (min-device-width: 769px) {
+    width: 369px;
+    left: 35%;
+    transition: ease all 0.5s;
+  }
 
   form {
     display: flex;
@@ -48,6 +72,10 @@ export const EditBtn = styled.div`
   width: 264px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-device-width: 769px) {
+    width: 330px;
+  }
 
   button:first-child {
     width: 163px;
@@ -62,6 +90,11 @@ export const EditBtn = styled.div`
     &:hover {
       background: var(--primary-focus);
       border: 1px solid var(--primary-focus);
+    }
+
+    @media screen and (min-device-width: 769px) {
+      width: 204px;
+      font-size: 16px;
     }
   }
 
@@ -78,6 +111,11 @@ export const EditBtn = styled.div`
     &:hover {
       background: var(--primary-focus);
       border: 1px solid var(--primary-focus);
+    }
+
+    @media screen and (min-device-width: 769px) {
+      width: 98px;
+      font-size: 16px;
     }
   }
 `;

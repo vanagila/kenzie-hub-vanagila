@@ -9,9 +9,6 @@ export const SelectSignUp = ({ label, register, name, error, ...rest }) => {
 
       <SelectContainer>
         <select {...register(name)} {...rest}>
-          <option value="" disabled defaultValue>
-            Primeiro módulo (Introdução ao Frontend)
-          </option>
           <option value="Primeiro módulo (Introdução ao Frontend)">
             Primeiro módulo (Introdução ao Frontend)
           </option>

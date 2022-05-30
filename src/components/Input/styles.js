@@ -13,6 +13,10 @@ export const LabelContainer = styled.div`
   color: var(--grey-0);
   font-size: 10px;
   margin-bottom: 15px;
+
+  @media screen and (min-device-width: 769px) {
+    font-size: 12px;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -22,6 +26,12 @@ export const InputContainer = styled.div`
   height: 38px;
   margin-bottom: 15px;
   border-radius: 4px;
+
+  @media screen and (min-device-width: 769px) {
+    width: 330px;
+    height: 48px;
+    transition: ease all 0.5s;
+  }
 
   input {
     background: transparent;

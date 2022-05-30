@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { Redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const Login = ({
   logo,
@@ -18,7 +19,10 @@ export const Login = ({
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
-    password: yup.string().required("Campo obrigatório"),
+    password: yup
+      .string()
+      .required("Campo obrigatório")
+      .min(6, "Senha de no mínimo 6 caracteres"),
   });
 
   const {
@@ -35,19 +39,22 @@ export const Login = ({
   };
 
   const handleLogin = async (data) => {
-    await api.post("/sessions", data).then((response) => {
-      localStorage.setItem("@KenzieHub:Token", response.data.token);
-      localStorage.setItem(
-        "@KenzieHub:User",
-        JSON.stringify(response.data.user)
-      );
+    await api
+      .post("/sessions", data)
+      .then((response) => {
+        localStorage.setItem("@KenzieHub:Token", response.data.token);
+        localStorage.setItem(
+          "@KenzieHub:User",
+          JSON.stringify(response.data.user)
+        );
 
-      setAuthenticated(true);
+        setAuthenticated(true);
 
-      setToken(response.data.token);
-      setUser(response.data.user);
-      history.push("/dashboard");
-    });
+        setToken(response.data.token);
+        setUser(response.data.user);
+        history.push("/dashboard");
+      })
+      .catch((err) => toast.error("Algo deu errado, tente novamente"));
 
     reset();
   };

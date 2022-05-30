@@ -6,6 +6,19 @@ export const Header = styled.header`
   margin: auto;
   margin-top: 114px;
   margin-bottom: 19px;
+
+  @media screen and (min-device-width: 769px) {
+    width: 144px;
+    height: 20px;
+    padding-bottom: 35px;
+  }
+
+  img {
+    @media screen and (min-device-width: 769px) {
+      width: 144px;
+      height: 20px;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -17,6 +30,11 @@ export const Container = styled.div`
   align-items: center;
   margin: auto;
 
+  @media screen and (min-device-width: 769px) {
+    width: 369px;
+    height: 502px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -26,6 +44,7 @@ export const Container = styled.div`
       background: var(--primary);
       width: 100%;
       height: 38px;
+      margin-top: 4px;
       border: 1px solid var(--primary);
       border-radius: 4px;
       color: var(--grey-0);
@@ -33,6 +52,12 @@ export const Container = styled.div`
       &:hover {
         background: var(--primary-focus);
         border: 1px solid var(--primary-focus);
+      }
+
+      @media screen and (min-device-width: 769px) {
+        height: 48px;
+        font-size: 16px;
+        margin-top: 24px;
       }
     }
   }
@@ -42,6 +67,12 @@ export const Container = styled.div`
     font-weight: 700;
     padding-top: 36px;
     padding-bottom: 22px;
+
+    @media screen and (min-device-width: 769px) {
+      font-size: 18px;
+      padding-top: 42px;
+      padding-bottom: 28px;
+    }
   }
 
   p {
@@ -50,6 +81,12 @@ export const Container = styled.div`
     font-weight: 600;
     padding-top: 27px;
     padding-bottom: 17px;
+
+    @media screen and (min-device-width: 769px) {
+      font-size: 12px;
+      padding-top: 34px;
+      padding-bottom: 22px;
+    }
   }
 
   button {
@@ -63,6 +100,12 @@ export const Container = styled.div`
     &:hover {
       background: var(--primary-focus);
       border: 1px solid var(--primary-focus);
+    }
+
+    @media screen and (min-device-width: 769px) {
+      height: 48px;
+      width: 330px;
+      font-size: 16px;
     }
   }
 `;

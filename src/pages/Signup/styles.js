@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
+export const Header = styled.nav`
   margin: auto;
   width: 296px;
   border-color: 1px solid white;
@@ -13,6 +13,10 @@ export const Header = styled.div`
   img {
     width: 101px;
     height: 15px;
+  }
+
+  @media screen and (min-device-width: 769px) {
+    width: 370px;
   }
 `;
 
@@ -39,6 +43,11 @@ export const Container = styled.div`
   align-items: center;
   margin: auto;
 
+  @media screen and (min-device-width: 769px) {
+    height: 795px;
+    width: 370px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -48,6 +57,22 @@ export const Container = styled.div`
       color: var(--grey-0);
       font-weight: 700;
       padding-top: 33px;
+
+      @media screen and (min-device-width: 769px) {
+        font-size: 18px;
+        padding-top: 20px;
+      }
+    }
+
+    p {
+      color: var(--grey-1);
+      font-size: 10px;
+      font-weight: 600;
+      padding-top: 17px;
+
+      @media screen and (min-device-width: 769px) {
+        font-size: 12px;
+      }
     }
 
     button {
@@ -63,14 +88,12 @@ export const Container = styled.div`
         background: var(--primary-focus);
         border: 1px solid var(--primary-focus);
       }
-    }
 
-    p {
-      color: var(--grey-1);
-      font-size: 10px;
-      font-weight: 600;
-      padding-top: 17px;
-      padding-bottom: 17px;
+      @media screen and (min-device-width: 769px) {
+        height: 48px;
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
   }
 `;

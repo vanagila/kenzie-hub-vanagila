@@ -12,6 +12,12 @@ export const Header = styled.nav`
     width: 101px;
     height: 15px;
   }
+
+  @media screen and (min-device-width: 769px) {
+    width: 780px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const Line = styled.hr`
@@ -53,6 +59,14 @@ export const ContainerInfo = styled.header`
     font-weight: 600px;
     color: var(--grey-1);
   }
+
+  @media screen and (min-device-width: 769px) {
+    width: 780px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-left: 0;
+  }
 `;
 
 export const TechHeader = styled.div`
@@ -65,6 +79,12 @@ export const TechHeader = styled.div`
 
   h4 {
     color: var(--grey-0);
+  }
+
+  @media screen and (min-device-width: 769px) {
+    width: 780px;
+    margin-top: 29px;
+    margin-bottom: 29px;
   }
 `;
 
@@ -92,6 +112,13 @@ export const TechContainer = styled.section`
   flex-direction: column;
   gap: 16px;
   background: var(--grey-3);
+  transition: ease all 0.5s;
+
+  @media screen and (min-device-width: 769px) {
+    width: 780px;
+    align-items: center;
+    transition: ease all 0.5s;
+  }
 `;
 
 export const TechCard = styled.div`
@@ -106,6 +133,10 @@ export const TechCard = styled.div`
   cursor: pointer;
   &:hover {
     background: var(--grey-2);
+  }
+
+  @media screen and (min-device-width: 769px) {
+    width: 742px;
   }
 
   h5 {
