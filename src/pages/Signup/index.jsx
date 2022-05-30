@@ -1,11 +1,15 @@
-import { Container, Header } from "./styles";
+import { Container, Header, ReturnLogin } from "./styles";
 import { Input } from "../../components/Input";
+import { SelectSignUp } from "../../components/SelectSignUp";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { api } from "../../services/api";
+import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
 
-export const Signup = ({ logo }) => {
+export const Signup = ({ logo, setUser, authenticated }) => {
   const formSchema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
@@ -34,15 +38,27 @@ export const Signup = ({ logo }) => {
 
   const sendData = (data) => {
     delete data.confirmPassword;
-    console.log(data);
+
+    api
+      .post("/users", data)
+      .then((response) => {
+        toast.success("Usuário cadastrado com sucesso!");
+        setUser(response.data);
+        history.push("/");
+      })
+      .catch((err) => toast.error("Algo deu errado, tente novamente"));
   };
+
+  if (authenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <>
       <Header>
         <img src={logo} alt={"kenziehub"} />
+        <ReturnLogin onClick={() => history.push("/")}>Voltar</ReturnLogin>
       </Header>
-      {/* <ReturnLogin onClick={() => handleSignup("/")}>Voltar</ReturnLogin> */}
       <Container>
         <form onSubmit={handleSubmit(sendData)}>
           <h4>Crie sua conta</h4>
@@ -94,12 +110,12 @@ export const Signup = ({ logo }) => {
             name="contact"
             error={errors.contact?.message}
           />
-          <Input
+          <SelectSignUp
             register={register}
             label="Selecionar módulo"
             placeholder="Primeiro Módulo"
             name="course_module"
-            error={errors.module?.message}
+            error={errors.course_module?.message}
           />
           <button type="submit">Cadastrar</button>
         </form>

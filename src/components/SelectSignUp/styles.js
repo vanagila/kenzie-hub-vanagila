@@ -19,7 +19,7 @@ export const LabelContainer = styled.div`
   }
 `;
 
-export const InputContainer = styled.div`
+export const SelectContainer = styled.div`
   background: var(--grey-2);
   display: flex;
   width: 264px;
@@ -30,15 +30,22 @@ export const InputContainer = styled.div`
   @media screen and (min-device-width: 769px) {
     width: 330px;
     height: 48px;
-    transition: ease all 0.5s;
   }
 
-  input {
+  select {
     background: transparent;
     border: 1px var(--grey-0) solid;
-    padding: 13px;
+    padding: 5px;
     width: 100%;
     border-radius: 4px;
     color: var(--grey-0);
+  }
+
+  option {
+    background: var(--grey-2);
+  }
+
+  #placeholder {
+    color: var(--grey-50);
   }
 `;
