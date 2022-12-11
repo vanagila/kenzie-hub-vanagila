@@ -37,7 +37,10 @@ export const EditTech = ({ handleModalEdit, selectedTech }) => {
           },
         }
       )
-      .then((response) => toast.success("Status editado com sucesso"))
+      .then(
+        (response) => toast.success("Status editado com sucesso"),
+        handleModalEdit()
+      )
       .catch((err) => console.log(err));
   };
 

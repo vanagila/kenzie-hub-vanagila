@@ -13,7 +13,7 @@ export const Header = styled.nav`
     height: 15px;
   }
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 780px;
     padding-left: 0;
     padding-right: 0;
@@ -60,7 +60,7 @@ export const ContainerInfo = styled.header`
     color: var(--grey-1);
   }
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 780px;
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@ export const TechHeader = styled.div`
     color: var(--grey-0);
   }
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 780px;
     margin-top: 29px;
     margin-bottom: 29px;
@@ -114,7 +114,7 @@ export const TechContainer = styled.section`
   background: var(--grey-3);
   transition: ease all 0.5s;
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 780px;
     align-items: center;
     transition: ease all 0.5s;
@@ -135,7 +135,7 @@ export const TechCard = styled.div`
     background: var(--grey-2);
   }
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 742px;
   }
 
