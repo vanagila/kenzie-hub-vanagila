@@ -7,14 +7,14 @@ export const Header = styled.header`
   margin-top: 114px;
   margin-bottom: 19px;
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 144px;
     height: 20px;
     padding-bottom: 35px;
   }
 
   img {
-    @media screen and (min-device-width: 769px) {
+    @media screen and (min-width: 769px) {
       width: 144px;
       height: 20px;
     }
@@ -30,7 +30,7 @@ export const Container = styled.div`
   align-items: center;
   margin: auto;
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 369px;
     height: 502px;
   }
@@ -54,7 +54,7 @@ export const Container = styled.div`
         border: 1px solid var(--primary-focus);
       }
 
-      @media screen and (min-device-width: 769px) {
+      @media screen and (min-width: 769px) {
         height: 48px;
         font-size: 16px;
         margin-top: 24px;
@@ -68,7 +68,7 @@ export const Container = styled.div`
     padding-top: 36px;
     padding-bottom: 22px;
 
-    @media screen and (min-device-width: 769px) {
+    @media screen and (min-width: 769px) {
       font-size: 18px;
       padding-top: 42px;
       padding-bottom: 28px;
@@ -82,7 +82,7 @@ export const Container = styled.div`
     padding-top: 27px;
     padding-bottom: 17px;
 
-    @media screen and (min-device-width: 769px) {
+    @media screen and (min-width: 769px) {
       font-size: 12px;
       padding-top: 34px;
       padding-bottom: 22px;
@@ -102,9 +102,8 @@ export const Container = styled.div`
       border: 1px solid var(--primary-focus);
     }
 
-    @media screen and (min-device-width: 769px) {
+    @media screen and (min-width: 769px) {
       height: 48px;
-      width: 330px;
       font-size: 16px;
     }
   }

@@ -15,7 +15,7 @@ export const Header = styled.nav`
     height: 15px;
   }
 
-  @media screen and (min-device-width: 769px) {
+  @media screen and (min-width: 769px) {
     width: 370px;
   }
 `;
@@ -43,8 +43,7 @@ export const Container = styled.div`
   align-items: center;
   margin: auto;
 
-  @media screen and (min-device-width: 769px) {
-    height: 795px;
+  @media screen and (min-width: 769px) {
     width: 370px;
   }
 
@@ -58,7 +57,7 @@ export const Container = styled.div`
       font-weight: 700;
       padding-top: 33px;
 
-      @media screen and (min-device-width: 769px) {
+      @media screen and (min-width: 769px) {
         font-size: 18px;
         padding-top: 20px;
       }
@@ -70,7 +69,7 @@ export const Container = styled.div`
       font-weight: 600;
       padding-top: 17px;
 
-      @media screen and (min-device-width: 769px) {
+      @media screen and (min-width: 769px) {
         font-size: 12px;
       }
     }
@@ -89,7 +88,7 @@ export const Container = styled.div`
         border: 1px solid var(--primary-focus);
       }
 
-      @media screen and (min-device-width: 769px) {
+      @media screen and (min-width: 769px) {
         height: 48px;
         font-size: 16px;
         font-weight: 500;

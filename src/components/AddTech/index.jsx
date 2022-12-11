@@ -31,6 +31,7 @@ export const AddTech = ({ tech, setTech, handleModalAdd }) => {
       })
       .then(
         (response) => setTech([response.data, ...tech]),
+        handleModalAdd(),
         toast.success("Tecnologia adicionada com sucesso")
       )
       .catch((err) => console.log(err));
